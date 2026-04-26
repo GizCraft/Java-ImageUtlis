@@ -176,70 +176,70 @@ setContentView(root);
 
 ---
 
-⚠️ Ketentuan Penggunaan
+## ⚠️ Ketentuan Penggunaan
 
-1. Izin Internet
+#### 1. Izin Internet
 
 
-
+```xml
 <uses-permission android:name="android.permission.INTERNET"/>
+```
+##### 2. HTTP (Non-HTTPS)
 
-2. HTTP (Non-HTTPS)
 
-
-
+```xml
 android:usesCleartextTraffic="true"
-
-3. Threading
+```
+#### 3. Threading
 
 
 
 Semua proses load berjalan di background thread.
 
 
-4. Memory Cache
+#### 4. Memory Cache
 
 
 
 Menggunakan LruCache (maksimal ±50 bitmap).
 
 
-5. Disk Cache
+#### 5. Disk Cache
 
 
 
 Disimpan di cacheDir dalam format PNG.
 
 
-6. Cache Expired
+#### 6. Cache Expired
 
 
 
 File otomatis dihapus jika melewati masa berlaku.
 
 
-7. Manajemen Bitmap
+#### 7. Manajemen Bitmap
 
 
 
 Recycle otomatis untuk mencegah memory leak.
 
 
-8. Gambar Resolusi Besar
+#### 8. Gambar Resolusi Besar
 
 
 
 Disarankan menggunakan downsampling manual.
 
 
-9. Sharpen
+#### 9. Sharpen
 
 
 
 Masih tahap pengembangan.
 
 
-10. Chain Method
+#### 10. Chain Method
 
 
 
@@ -249,7 +249,7 @@ Mendukung chaining dengan utilitas lain.
 
 ---
 
-🛑 Penanganan Error
+## 🛑 Penanganan Error
 
 Semua error ditangkap internal.
 
@@ -261,7 +261,7 @@ Log tersedia di Logcat dengan tag: ImgUtl.
 
 ---
 
-🔄 Kompatibilitas
+## 🔄 Kompatibilitas
 
 Minimum API: 16 (Android 4.1)
 
@@ -273,9 +273,9 @@ Tanpa library eksternal
 
 ---
 
-📌 Catatan
+# 📌 Catatan
 
-Dirancang untuk proyek berbasis Java tanpa XML, dengan pendekatan programmatic UI sepenuhnya.
+Dirancang untuk proyek berbasis Java tanpa XML, dengan pendekatan programmatic UI sepenuhnya(opini saya saja, lainnya terserah lu).
 
 
 ---
