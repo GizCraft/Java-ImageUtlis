@@ -29,35 +29,33 @@ new ImageUtlis(context)
 
 ## 📥 Sumber Gambar
 
-# Metode	Deskripsi
+| Metode | Deskripsi
+|----------------|-----------------------------------|
+|load(String url) | Memuat gambar dari URL (HTTP/HTTPS) |
+|res(int resId) |	Memuat dari resource drawable
+|draw(Drawable)	| Memuat dari objek Drawable
+|bmp(Bitmap) |	Memuat dari Bitmap
+|file(File) |	Memuat dari file lokal
+|asset(String) |	Memuat dari folder assets
+|uri(Uri) |	Memuat dari content URI
 
-load(String url)	Memuat gambar dari URL (HTTP/HTTPS)
-res(int resId)	Memuat dari resource drawable
-draw(Drawable)	Memuat dari objek Drawable
-bmp(Bitmap)	Memuat dari Bitmap
-file(File)	Memuat dari file lokal
-asset(String)	Memuat dari folder assets
-uri(Uri)	Memuat dari content URI
 
-
-Contoh:
-
-.load("https://picsum.photos/id/1/400/300")
+# Example:
+```java
+.load("https://example.png/photo.jpg")
 .res(R.drawable.my_image)
 .asset("images/photo.jpg")
+```
 
+## 🎨 Manipulasi Gambar
 
----
+# Bentuk & Border
 
-🎨 Manipulasi Gambar
-
-Bentuk & Border
-
-Metode	Deskripsi
-
-circle(boolean)	Membuat gambar lingkaran
-radius(float)	Sudut melengkung (px)
-stroke(int, int)	Border (width, color)
+|Metode | Deskripsi |
+|----------------|-------------------------------|
+|circle(boolean) |	Membuat gambar lingkaran |
+|radius(float) |	Sudut melengkung (px) |
+|stroke(int, int) |	Border (width, color) |
 
 
 .circle(true)
