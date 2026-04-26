@@ -57,38 +57,32 @@ new ImageUtlis(context)
 |radius(float) |	Sudut melengkung (px) |
 |stroke(int, int) |	Border (width, color) |
 
-
+```java
 .circle(true)
 .radius(30f)
 .stroke(5, Color.WHITE)
+```
 
+# Transformasi
 
----
+|Metode |	Deskripsi
+|----------------|-----------------------------------|
+|rotate(float) |	Rotasi (derajat)
+|scale(float, float) |	Skala horizontal & vertikal
 
-Transformasi
+# Filter & Efek
 
-Metode	Deskripsi
+|Metode |	Deskripsi
+|----------------|-----------------------------------|
+|brightness(float) |	Kecerahan (-255 s.d 255)
+|contrast(float) |	Kontras (0.1 – 3.0)
+|saturation(float) |	Saturasi warna
+|sharpen(float) |	Ketajaman (eksperimental)
+|tint(int) |	Overlay warna transparan
+|blur(float) |	Efek blur
+|gradOverlay(...) |	Overlay gradien
 
-rotate(float)	Rotasi (derajat)
-scale(float, float)	Skala horizontal & vertikal
-
-
-
----
-
-Filter & Efek
-
-Metode	Deskripsi
-
-brightness(float)	Kecerahan (-255 s.d 255)
-contrast(float)	Kontras (0.1 – 3.0)
-saturation(float)	Saturasi warna
-sharpen(float)	Ketajaman (eksperimental)
-tint(int)	Overlay warna transparan
-blur(float)	Efek blur
-gradOverlay(...)	Overlay gradien
-
-
+```java
 .brightness(30)
 .contrast(1.2f)
 .saturation(0.8f)
@@ -98,80 +92,64 @@ gradOverlay(...)	Overlay gradien
     new int[]{0x00000000, 0xAA000000},
     GradientDrawable.Orientation.TOP_BOTTOM
 )
+```
 
+## ⏳ Placeholder & Error
 
----
+|Metode |	Deskripsi
+|----------------|-----------------------------------|
+|placeholder(int) |	Gambar saat loading
+|errorImg(int) |	Gambar saat gagal load
 
-⏳ Placeholder & Error
-
-Metode	Deskripsi
-
-placeholder(int)	Gambar saat loading
-errorImg(int)	Gambar saat gagal load
-
-
+```java
 .placeholder(R.drawable.loading)
 .errorImg(R.drawable.broken)
-
-
----
-
-💾 Cache
-
+```
+## 💾 Cache
+```java
 .exp(3600) // cache 1 jam
+```
+|Metode |	Deskripsi
+|----------------|-----------------------------------|
+|exp(long) |	Durasi cache dalam detik
 
-Metode	Deskripsi
-
-exp(long)	Durasi cache dalam detik
-
-
-
----
-
-🎯 Event & Listener
-
+## 🎯 Event & Listener
+```java
 .click(v -> Toast.makeText(ctx, "Klik", Toast.LENGTH_SHORT).show())
 .listener(new ImageUtlis.OnImageLoadListener() {
     @Override public void onSuccess() {}
     @Override public void onError(Throwable t) {}
 })
+```
 
+## 📐 Layout & Tampilan
 
----
+|Metode |	Deskripsi
+|----------------|-----------------------------------|
+|params(LayoutParams)|	Set ukuran layout
+|pad(...)|	Padding
+|margin(...)|	Margin
+|scaleType(...)|	ScaleType ImageView
 
-📐 Layout & Tampilan
-
-Metode	Deskripsi
-
-params(LayoutParams)	Set ukuran layout
-pad(...)	Padding
-margin(...)	Margin
-scaleType(...)	ScaleType ImageView
-
-
+```java
 .params(new LinearLayout.LayoutParams(-1, 400))
 .margin(20,20,20,20)
 .pad(10,10,10,10)
 .scaleType(ImageView.ScaleType.CENTER_CROP)
+```
+## ✅ Finalisasi
 
-
----
-
-✅ Finalisasi
-
-Tambahkan ke layout:
-
+# Tambahkan ke layout:
+```java
 .addTo(parentViewGroup);
-
+```
 Atau ambil instance ImageView:
-
+```java
 ImageView img = imageUtlis.get();
+```
 
-
----
-
-📝 Contoh Lengkap
-
+## 📝 Contoh Lengkap
+```java
 LinearLayout root = new LinearLayout(this);
 root.setOrientation(LinearLayout.VERTICAL);
 
@@ -194,7 +172,7 @@ new ImageUtlis(this)
     .addTo(root);
 
 setContentView(root);
-
+```
 
 ---
 
